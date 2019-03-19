@@ -35,6 +35,9 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 // 个人信息界面
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
+//话题界面操作
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');//话题上传图片
 
+//话题分类
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
